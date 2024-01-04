@@ -194,6 +194,42 @@
       color: #fff;
       font-size: 20px;
     }
+    .about-container,
+    .contact-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: left;
+      max-width: 600px;
+      width: 80%;
+      color: #fff;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+    }
+  </style>
+
   </style>
 </head>
 
@@ -205,8 +241,8 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
+    <a href="https://www.linkedin.com/in/chethan-kumar-2b91b0205/">Home</a>
+    <a href="https://twitter.com/Rajathsinhaa">About</a>
     <a href="#" onclick="openSkills()">Skills</a>
     <a href="#" onclick="openContact()">Contact</a>
   </nav>
@@ -215,7 +251,7 @@
     <div class="sidebar">
       <h2>Quick Links</h2>
       <ul>
-        <li><a href="https://www.linkedin.com/in/rajath-sinha-890a22183/">LinkedIn</a></li>
+        <li><a color="fff" href="https://www.linkedin.com/in/rajath-sinha-890a22183/">LinkedIn</a></li>
         <li><a href="https://github.com/Rajathsinha/">GitHub</a></li>
       </ul>
     </div>
