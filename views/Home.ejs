@@ -1,0 +1,223 @@
+Certainly! I'll enhance the styling by adding a header with navigation links and a sidebar for additional content. Here's an updated version:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title><%= title%></title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background-image.jpg'); /* Add your image URL here */
+      background-size: cover;
+      color: #fff;
+    }
+
+    header {
+      background-color: #343a40;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1, header p {
+      margin: 0;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #292b2c;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 16px;
+      margin: 0 8px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #343a40;
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+    }
+
+    h1, h2 {
+      color: #343a40;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .sidebar {
+      width: 30%;
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .quote-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #333;
+    }
+
+    .slide-container {
+      overflow: hidden;
+      margin-top: 20px;
+      width: 65%;
+    }
+
+    .slide {
+      display: none;
+      padding: 20px;
+      background-color: #343a40;
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide-btn {
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .slide-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hover Effects for Section */
+    section:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      transform: scale(1.02);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Footer Hover Effect */
+    footer:hover {
+      background-color: #292b2c;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Rajath Sinha</h1>
+    <p>Backend Developer - MERN Stack</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Skills</a>
+    <a href="#">Experience</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <div class="sidebar">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2>About Me</h2>
+      <p>Hello, I'm Rajath Sinha, a passionate backend developer with expertise in the MERN (MongoDB, Express.js, React.js,
+        Node.js) stack. I love building scalable and efficient web applications that solve real-world problems.</p>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript (Node.js)</li>
+        <li>Express.js</li>
+        <li>MongoDB</li>
+        <li>React.js</li>
+        <li>RESTful APIs</li>
+      </ul>
+
+      <div class="quote-container">
+        <p class="quote">"Code is like humor. When you have to explain it, it’s bad
+
+."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience-container">
+    <!-- Experiences go here -->
+  </section>
+
+  <section class="slide-container">
+    <div class="slide active">
+      <h2>Motivational Quote 1</h2>
+      <p>"Do not be embarrassed by your failures, learn from them and start again."</p>
+    </div>
+    <!-- Add more slides here -->
+    <button class="slide-btn" onclick="nextSlide()">Next Quote</button>
+  </section>
+
+  <footer>
+    &copy; 2022 Rajath Sinha | Backend Developer
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
+```
+
