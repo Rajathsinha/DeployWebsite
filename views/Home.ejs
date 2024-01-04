@@ -54,7 +54,7 @@
     }
 
     h1, h2 {
-      color: #1a1a1a;
+      color: #f1e6e6;
     }
 
     p {
@@ -119,6 +119,50 @@
       color: #ddd;
     }
 
+    .skills-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .skills-content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 80%;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    /* Hover Effects for Section */
+    section:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: scale(1.02);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Footer Hover Effect */
+    footer:hover {
+      background-color: #333;
+      transition: background-color 0.3s ease;
+    }
     .contact-container {
       display: none;
       justify-content: center;
@@ -150,19 +194,6 @@
       color: #fff;
       font-size: 20px;
     }
-
-    /* Hover Effects for Section */
-    section:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-      transform: scale(1.02);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Footer Hover Effect */
-    footer:hover {
-      background-color: #e3c9c9;
-      transition: background-color 0.3s ease;
-    }
   </style>
 </head>
 
@@ -176,7 +207,7 @@
   <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
-    <a href="#">Skills</a>
+    <a href="#" onclick="openSkills()">Skills</a>
     <a href="#" onclick="openContact()">Contact</a>
   </nav>
 
@@ -213,6 +244,8 @@
   <section class="experience-container">
     <div class="experience">
       <h3>Professional Experience</h3>
+      <h3>Anthology Inc - Associate Software Developer</h3>
+
       <p><strong>Dec 2021 – Dec 2023 | Bangalore, India</strong></p>
       <ul>
         <li>Spearheaded a team of software engineers in developing and maintaining robust backend applications using JavaScript, Node.JS, and Express.JS.</li>
@@ -225,7 +258,7 @@
     </div>
 
     <div class="experience">
-      <h3>Ovi Hostings PVT. LTD.</h3>
+      <h3>Ovi Hostings PVT. LTD. - Technical executive</h3>
       <p><strong>Mar 2021 – Oct 2021 | Bangalore, India</strong></p>
       <ul>
         <li>Enhanced server performance by 20% through vigilant monitoring and optimization.</li>
@@ -239,7 +272,26 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Skills Modal -->
+  <div class="skills-container" id="skillsContainer">
+    <div class="skills-content">
+      <span class="close-btn" onclick="closeSkills()">&times;</span>
+      <h2>Skills & Interests</h2>
+      <ul>
+        <li>Backend Dev: JavaScript, NodeJS, ExpressJS, MongoDB, SQL</li>
+        <li>Containers: Docker</li>
+        <li>Search Engines: ElasticSearch</li>
+        <li>Caching: Redis</li>
+        <li>Version Control: Git</li>
+        <li>Tools: Visual Studio Code, Postman API, Swagger</li>
+        <li>Agile Methodologies: Scrum, Kanban</li>
+        <li>Software Development Lifecycle (SDLC)</li>
+        <li>Troubleshooting and Debugging</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
   <div class="contact-container" id="contactContainer">
     <div class="contact-content">
       <span class="close-btn" onclick="closeContact()">&times;</span>
@@ -272,6 +324,14 @@
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
+    }
+
+    function openSkills() {
+      document.getElementById('skillsContainer').style.display = 'flex';
+    }
+
+    function closeSkills() {
+      document.getElementById('skillsContainer').style.display = 'none';
     }
 
     function openContact() {
