@@ -90,36 +90,65 @@
       color: #ddd;
     }
 
-    .slide-container {
-      overflow: hidden;
+    .experience-container {
       margin-top: 20px;
-      width: 65%;
     }
 
-    .slide {
-      display: none;
-      padding: 20px;
-      background-color: #1a1a1a;
-      color: #fff;
+    .experience {
+      margin-bottom: 20px;
+      border: 2px solid #1a1a1a;
       border-radius: 8px;
+      padding: 20px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
     }
 
-    .slide.active {
-      display: block;
+    .experience:hover {
+      border-color: #4f86d6;
+      transform: scale(1.02);
     }
 
-    .slide-btn {
+    .experience h3 {
+      color: #4f86d6;
+    }
+
+    .experience p strong {
+      color: #47cf73;
+    }
+
+    .experience ul {
+      color: #ddd;
+    }
+
+    .contact-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .contact-content {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 80%;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
       cursor: pointer;
-      background-color: #4f86d6;
       color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .slide-btn:hover {
-      background-color: #3366cc;
+      font-size: 20px;
     }
 
     /* Hover Effects for Section */
@@ -131,7 +160,7 @@
 
     /* Footer Hover Effect */
     footer:hover {
-      background-color: #333;
+      background-color: #e3c9c9;
       transition: background-color 0.3s ease;
     }
   </style>
@@ -148,17 +177,15 @@
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Skills</a>
-    <a href="#">Experience</a>
-    <a href="#">Contact</a>
+    <a href="#" onclick="openContact()">Contact</a>
   </nav>
 
   <section>
     <div class="sidebar">
       <h2>Quick Links</h2>
       <ul>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li><a href="https://www.linkedin.com/in/rajath-sinha-890a22183/">LinkedIn</a></li>
+        <li><a href="https://github.com/Rajathsinha/">GitHub</a></li>
       </ul>
     </div>
 
@@ -184,8 +211,45 @@
 
   <!-- Experience Section -->
   <section class="experience-container">
-    <!-- Experiences go here -->
+    <div class="experience">
+      <h3>Professional Experience</h3>
+      <p><strong>Dec 2021 – Dec 2023 | Bangalore, India</strong></p>
+      <ul>
+        <li>Spearheaded a team of software engineers in developing and maintaining robust backend applications using JavaScript, Node.JS, and Express.JS.</li>
+        <li>Designed and implemented RESTful APIs, streamlining communication between front-end and back-end systems.</li>
+        <li>Efficiently managed and stored application data in MongoDB and SQL databases, ensuring a 30% improvement in data retrieval speed and enhancing overall system security.</li>
+        <li>Leveraged AWS services (EC2, S3, Lambda) to deploy and scale applications in a cloud-based environment, resulting in a 20% reduction in infrastructure costs.</li>
+        <li>Implemented Docker containers, ensuring consistent application deployment across diverse environments and reducing deployment errors by 15%.</li>
+        <li>Utilized ElasticSearch for advanced search functionality, improving data retrieval speed by 25% and enhancing the overall user experience.</li>
+      </ul>
+    </div>
+
+    <div class="experience">
+      <h3>Ovi Hostings PVT. LTD.</h3>
+      <p><strong>Mar 2021 – Oct 2021 | Bangalore, India</strong></p>
+      <ul>
+        <li>Enhanced server performance by 20% through vigilant monitoring and optimization.</li>
+        <li>Reduced server setup time by 15% by streamlining configuration processes.</li>
+        <li>Achieved a 25% reduction in server downtime by effectively troubleshooting technical issues.</li>
+        <li>Enhanced user accessibility and cut configuration time by 30% for control panels like cPanel and WHM.</li>
+        <li>Boosted account management efficiency by 40% through streamlined configuration of customer accounts, domains, and email accounts.</li>
+        <li>Achieved a 30% faster resolution time for technical issues related to web hosting technologies.</li>
+        <li>Reduced overall server issues by 20% through effective investigation of server logs and diagnostic tools.</li>
+      </ul>
+    </div>
   </section>
+
+  <!-- Contact Section -->
+  <div class="contact-container" id="contactContainer">
+    <div class="contact-content">
+      <span class="close-btn" onclick="closeContact()">&times;</span>
+      <h2>Contact Details</h2>
+      <p><strong>Name:</strong> Rajath Sinha</p>
+      <p><strong>Email:</strong> sinha.rajath0@gmail.com</p>
+      <p><strong>Work:</strong> Software Developer, Backend</p>
+      <p><strong>Tech Stack:</strong> NodeJS, ExpressJS, JavaScript, MongoDB, SQL, S3, Docker</p>
+    </div>
+  </div>
 
   <section class="slide-container">
     <div class="slide active">
@@ -208,6 +272,14 @@
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
+    }
+
+    function openContact() {
+      document.getElementById('contactContainer').style.display = 'flex';
+    }
+
+    function closeContact() {
+      document.getElementById('contactContainer').style.display = 'none';
     }
   </script>
 </body>
