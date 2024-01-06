@@ -2,45 +2,52 @@
 <html lang="en">
 
 <head>
-  <title><%= title%></title>
+  <title>Rajath Sinha - Backend Developer</title>
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background-image: linear-gradient(120deg, #4f86d6, #47cf73); /* Gradient background */
-      color: #fff;
+      background-image: linear-gradient(120deg, #fdfdfd, rgb(240, 174, 174)); /* Gradient background */
+      color: #000000;
     }
 
     header {
-      background-color: #1a1a1a;
+      background-color: #ffffff;
       padding: 20px;
       text-align: center;
     }
 
     header h1, header p {
       margin: 0;
-      color: #fff;
+      color: #000000;
     }
 
     nav {
-      background-color: #333;
-      padding: 10px;
+      background-color: #ffffff;
+      padding: 30px;
     }
 
     nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 16px;
-      margin: 0 8px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    nav a:hover {
-      background-color: #555;
-    }
+/* Hover effect for other links */
+nav a:hover {
+    background-color: #f0e4e4;
+    color: #fff;
+}
 
+/* Set initial styles for other links */
+nav a:not(:hover) {
+    background-color: #fff; /* Set initial background color for other links */
+    color: black; /* Set initial text color for other links */
+}
     section {
       display: flex;
       flex-wrap: wrap;
@@ -48,18 +55,18 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(255, 255, 255, 0.986);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       border-radius: 8px;
     }
 
     h1, h2 {
-      color: #f1e6e6;
+      color: #000000;
     }
 
     p {
       line-height: 1.6;
-      color: #ddd;
+      color: #000000;
     }
 
     ul {
@@ -73,12 +80,12 @@
     }
 
     .sidebar {
-      width: 30%;
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
+    width: 95%;
+    background-color: #f3f3f3;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+}
 
     .quote-container {
       margin-top: 20px;
@@ -87,7 +94,7 @@
 
     .quote {
       font-style: italic;
-      color: #ddd;
+      color: #000000;
     }
 
     .experience-container {
@@ -96,27 +103,27 @@
 
     .experience {
       margin-bottom: 20px;
-      border: 2px solid #1a1a1a;
+      border: 2px solid #ffffff;
       border-radius: 8px;
       padding: 20px;
       transition: border-color 0.3s ease, transform 0.3s ease;
     }
 
     .experience:hover {
-      border-color: #4f86d6;
-      transform: scale(1.02);
+      border-color: #000000;
+      transform: scale(2.3s);
     }
 
     .experience h3 {
-      color: #4f86d6;
+      color: #030304;
     }
 
     .experience p strong {
-      color: #47cf73;
+      color: #080d0a;
     }
 
     .experience ul {
-      color: #ddd;
+      color: #000000;
     }
 
     .skills-container {
@@ -129,17 +136,20 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(245, 233, 233, 0.7);
       z-index: 999;
     }
 
     .skills-content {
-      background-color: #1a1a1a;
-      padding: 20px;
+      background-color: #ffffff;
+      padding: 58;
       border-radius: 8px;
       text-align: center;
-      max-width: 400px;
+      max-width: 700px;
       width: 80%;
+      border: .5px solid rgb(0, 0, 0);
+      background-image: linear-gradient(120deg, #fdfdfd, rgb(240, 212, 212));
+
     }
 
     .close-btn {
@@ -147,20 +157,20 @@
       top: 10px;
       right: 10px;
       cursor: pointer;
-      color: #fff;
-      font-size: 20px;
+      color: #000000;
+      font-size: 200px;
     }
 
     /* Hover Effects for Section */
     section:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(244, 215, 215, 0.8);
       transform: scale(1.02);
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     /* Footer Hover Effect */
     footer:hover {
-      background-color: #333;
+      background-color: #facfcf;
       transition: background-color 0.3s ease;
     }
     .contact-container {
@@ -173,7 +183,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(226, 218, 218, 0.7);
       z-index: 999;
     }
 
@@ -186,14 +196,14 @@
       width: 80%;
     }
 
-    .close-btn {
+    /* .close-btn {
       position: absolute;
       top: 10px;
       right: 10px;
       cursor: pointer;
       color: #fff;
       font-size: 20px;
-    }
+    } */
     .about-container,
     .contact-container {
       display: none;
@@ -225,13 +235,47 @@
       top: 10px;
       right: 10px;
       cursor: pointer;
-      color: #fff;
-      font-size: 20px;
+      color: #151515;
+      font-size: 60px;
     }
+
+    nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* New styles for LinkedIn and GitHub links */
+
+nav a#linkedin {
+    color: #fff; /* Text color for LinkedIn */
+    background-color: #0077b5; /* LinkedIn blue color */
+}
+
+nav a#github {
+    color: #fff; /* Text color for GitHub */
+    background-color: #333; /* GitHub dark gray color */
+}
+
+nav a#linkedin:hover {
+    background-color: #005885; /* Darker shade on hover for LinkedIn */
+}
+
+nav a#github:hover {
+    background-color: #000; /* Darker shade on hover for GitHub */
+}
+
+    
   </style>
 
-  </style>
-</head>
+
 
 <body>
 
@@ -245,6 +289,7 @@
     <a href="https://twitter.com/Rajathsinhaa">About</a>
     <a href="#" onclick="openSkills()">Skills</a>
     <a href="#" onclick="openContact()">Contact</a>
+    <a href="/register" >Pricing</a>
   </nav>
 
   <section>
@@ -352,15 +397,28 @@
     &copy; 2022 Rajath Sinha | Backend Developer
   </footer>
 
+
+
+  <!-- LinkedIn link -->
+<a id="linkedin" href="https://www.linkedin.com/in/rajath-sinha-890a22183/" target="_blank">LinkedIn</a>
+
+<!-- GitHub link -->
+<a id="github" href="https://github.com/Rajathsinha/" target="_blank">GitHub</a>
+
+
   <script>
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+  const slides = document.querySelectorAll('.slide');
+  
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    setInterval(nextSlide, 5000); // Auto-advance slides every 5 seconds
+  });
 
     function openSkills() {
       document.getElementById('skillsContainer').style.display = 'flex';
